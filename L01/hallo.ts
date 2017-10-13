@@ -1,3 +1,11 @@
+//Aufgabe:    01 Canvas: Skipiste
+//Name:       Stephen Bodmer
+//Matrikel:   256218
+//Datum:      13.10.2017
+//Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
+//Er wurde nicht kopiert und auch nicht diktiert.
+
+
 window.addEventListener("load", skipiste);
 
 function skipiste(): void {
