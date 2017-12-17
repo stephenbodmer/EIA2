@@ -1,0 +1,92 @@
+//Aufgabe:    09
+//Name:       Stephen Bodmer
+//Matrikel:   256218
+//Datum:      09.12.2017
+//Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
+//Er wurde nicht kopiert und auch nicht diktiert.
+
+namespace Aufgabe9{
+
+  window.addEventListener("load", init);
+  let currentLetter: string;
+  let alphabet: string [] = [];
+
+  function init(): void{
+
+    for(let i : number = 65; i < 91; i++){
+      alphabet.push(String.fromCharCode(i));
+    }
+    for(let i : number = 0; i <alphabet.length; i++){
+      makeDiv(alphabet[i]);
+    }
+    makeLetter();
+    console.log(alphabet);
+  }
+
+
+  function makeDiv(_alphabet: string): void{
+
+    let div: HTMLDivElement = document.createElement("div");
+    div.addEventListener("mousedown", handleMouseClick);
+
+    div.innerText = _alphabet;
+    div.style.border = "solid 1px";
+    div.style.display = "inline";
+    div.style.margin = "0 10px";
+    div.id = _alphabet;
+    div.className = "letters";
+
+    document.body.appendChild(div);
+  }
+
+  function handleMouseClick(_event: MouseEvent): void {
+
+  let klicken: HTMLDivElement = <HTMLDivElement>_event.target;
+  klicken.style.color = "aqua";
+
+  currentLetter = klicken.id;
+
+  let divList: NodeListOf<HTMLDivElement> = <NodeListOf<HTMLDivElement>>document.getElementsByClassName("letters");
+
+    for (let i: number = 0; i < divList.length; i++) {
+      if (currentLetter != divList[i].id) {
+        divList[i].style.color = "black";
+      }
+    }
+  }
+
+  function makeLetter(): void {
+
+    let letter: HTMLDivElement = document.createElement("div");
+
+    letter.style.backgroundColor = "lightgrey";
+    letter.style.width = "90%";
+    letter.style.height = "300px";
+    letter.style.marginTop = "10px";
+    letter.style.marginRight = "2px";
+    letter.id = "letterspace";
+    document.body.appendChild(letter);
+ }
+
+  function writeLetter(_event: MouseEvent): void {
+
+        let div: HTMLDivElement = document.createElement("div");
+
+        div.innerText =currentLetter;
+        div.style.backgroundColor = "none";
+        div.style.width = "30px";
+        div.style.height = "30px";
+        div.style.marginLeft = "3px";
+        div.style.marginRight = "3px";
+        div.style.fontSize = "30px";
+        div.style.textAlign = "center";
+        div.style.position="absolute";
+        div.style.left = _event.pageX + "px";
+        div.style.top= _event.pageY + "px";
+
+        div.addEventListener("click", writeLetter);
+        document.body.appendChild(div);
+
+          let clicking: HTMLDivElement = <HTMLDivElement>_event.target;
+    }
+}
