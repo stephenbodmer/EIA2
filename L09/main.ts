@@ -85,9 +85,7 @@ namespace Aufgabe9{
         b.style.left = _event.pageX + "px";
         b.style.top= _event.pageY + "px";
 
-        b.addEventListener("click", writeLetter);
         document.body.appendChild(b);
 
-          let clicking: HTMLDivElement = <HTMLDivElement>_event.target;
     }
 }
