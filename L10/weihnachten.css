@@ -1,0 +1,55 @@
+/*input:invalid {
+	background: #F0C060;
+}
+input:valid {
+	background: green;
+}
+input:required {
+	background: #aaaaaa;*/
+
+@media screen and (max-width: 36.24em){
+body{
+  width: 100%;
+  margin:0;
+  padding:0;
+  display:grid;
+  grid-row-gap: 2em;
+  grid-template-columns:10% 80% 10%;
+  grid-template-rows:1em auto auto;
+  grid-auto-flow: column;
+}
+
+main{
+  grid-column: 2/3;
+  grid-row: 2/auto;
+}
+
+#aside{
+  grid-column: 2/3;
+  grid-row: 3/auto;
+}
+}
+
+@media screen and (min-width: 36.25em){
+
+body{
+  width: 100%;
+  margin:0;
+  padding:0;
+  display:grid;
+  grid-gap: 2%;
+  grid-template-columns:7% 50% 30% 7%;
+  grid-template-rows:2em auto;
+  grid-auto-flow: column;
+}
+
+main{
+  grid-column: 2/3;
+  grid-row: 2/auto;
+}
+
+#aside{
+  grid-column: 3/4;
+  grid-row: 2/auto;
+}
+}
