@@ -18,7 +18,51 @@ namespace weihnachtsfreude{
   var menge: number= 1;
   let gespreis: number= 0;
 
-window.addEventListener("change", handleChange)
+  var name: HTMLInputElement;
+  var adresse: HTMLInputElement;
+  var plz: HTMLInputElement;
+  var mail: HTMLInputElement;
+  var shipment: HTMLSelectElement;
+  var payment: HTMLInputElement;
+  var quantity: HTMLInputElement;
+
+
+window.addEventListener("load", buildHTML);
+window.addEventListener("change", handleChange);
+
+function buildHTML(): void{
+  let CheckOut: HTMLDivElement = <HTMLDivElement>document.getElementById("checkout");
+
+   name = document.createElement("input");
+   name.type = "text";
+   name.name = "name";
+   name.placeholder = "Vorname / Nachname";
+   name.required = true;
+   CheckOut.appendChild(name);
+
+   adresse = document.createElement("input");
+   adresse.type = "text";
+   adresse.name = "street";
+   adresse.placeholder = "Straße";
+   adresse.required = true;
+   CheckOut.appendChild(adresse);
+
+   plz = document.createElement("input");
+   plz.type = "text";
+   plz.name = "plz";
+   plz.placeholder = "Postleitzahl";
+   plz.pattern = "[0-9]{5}";
+   plz.required = true;
+   CheckOut.appendChild(plz);
+
+   mail = document.createElement("input");
+   mail.type= "email";
+   mail.name= "mail";
+   mail.placeholder= "E-Mail@email.de";
+   mail.pattern = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
+   mail.required = true;
+   CheckOut.appendChild(mail);
+}
 
 function handleChange(_event: Event): void {
 
@@ -68,4 +112,4 @@ function handleChange(_event: Event): void {
   gespreis= ((baum*height)+halterung+deko+color+shipping)*menge;
   document.getElementById("preis-ges").innerHTML = String(gespreis);
   }
-}  
+}

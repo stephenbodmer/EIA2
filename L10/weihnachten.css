@@ -19,6 +19,7 @@ body{
   grid-auto-flow: column;
 }
 
+
 main{
   grid-column: 2/3;
   grid-row: 2/auto;
@@ -52,4 +53,9 @@ main{
   grid-column: 3/4;
   grid-row: 2/auto;
 }
+
+    #aside input{
+    display: block;
+  }
+
 }
