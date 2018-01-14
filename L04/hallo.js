@@ -7,18 +7,18 @@
 var aufgabe4;
 (function (aufgabe4) {
     window.addEventListener("load", skipiste); //wenn Seite vollständig geladen, Funktion skipiste wird aufgerufen
-    let ski;
+    var ski;
     console.log(ski);
-    let schneeX = [];
-    let schneeY = [];
-    let sonneX = [];
-    let sonneY = [];
-    let wolkeX = [];
-    let wolkeY = [];
-    let imgData;
-    let skier = [];
+    var schneeX = [];
+    var schneeY = [];
+    var sonneX = [];
+    var sonneY = [];
+    var wolkeX = [];
+    var wolkeY = [];
+    var imgData;
+    var skier = [];
     function skipiste() {
-        let canvas = document.getElementsByTagName("canvas")[0];
+        var canvas = document.getElementsByTagName("canvas")[0];
         ski = canvas.getContext("2d");
         //Himmel
         ski.fillStyle = "#81DAF5";
@@ -84,23 +84,23 @@ var aufgabe4;
             drawTree(Math.floor(Math.random() * 550 + 50), Math.floor(Math.random() * 100 + 480), ski);
         }
         // Schnee
-        for (let i = 0; i < 1000; i++) {
-            schneeX[i] = Math.random() * 800;
-            schneeY[i] = Math.random() * 600;
+        for (var i_1 = 0; i_1 < 1000; i_1++) {
+            schneeX[i_1] = Math.random() * 800;
+            schneeY[i_1] = Math.random() * 600;
         }
         //Sonne 
-        for (let i = 0; i < 1; i++) {
-            sonneX[i] = Math.random() * (770 - 360 + 1) + 360;
-            sonneY[i] = Math.random() * (100 - 30 + 1) + 30;
+        for (var i_2 = 0; i_2 < 1; i_2++) {
+            sonneX[i_2] = Math.random() * (770 - 360 + 1) + 360;
+            sonneY[i_2] = Math.random() * (100 - 30 + 1) + 30;
         }
         //Wolke 
-        for (let i = 0; i < 3; i++) {
-            wolkeX[i] = Math.random() * -400 + 200;
-            wolkeY[i] = Math.random() * (100 - 30 + 1) + 30;
+        for (var i_3 = 0; i_3 < 3; i_3++) {
+            wolkeX[i_3] = Math.random() * -400 + 200;
+            wolkeY[i_3] = Math.random() * (100 - 30 + 1) + 30;
         }
         // Skifahrer 
-        for (let i = 0; i < 3; i++) {
-            skier[i] = {
+        for (var i_4 = 0; i_4 < 3; i_4++) {
+            skier[i_4] = {
                 x: 350,
                 y: 430,
                 dx: Math.random() * 8 + 5,
@@ -175,7 +175,7 @@ var aufgabe4;
     function animate() {
         ski.putImageData(imgData, 0, 0); //Hintergrundbild einsetzen
         //Sonne
-        for (let i = 0; i < sonneX.length; i++) {
+        for (var i = 0; i < sonneX.length; i++) {
             if (sonneX[i] > 800) {
                 sonneX[i] = 0;
             }
@@ -184,7 +184,7 @@ var aufgabe4;
             createSonne(sonneX[i], sonneY[i], ski);
         }
         //Wolke
-        for (let i = 0; i < wolkeX.length; i++) {
+        for (var i = 0; i < wolkeX.length; i++) {
             if (wolkeX[i] > 800) {
                 wolkeX[i] = 0;
             }
@@ -192,7 +192,7 @@ var aufgabe4;
             createWolke(wolkeX[i], wolkeY[i], ski);
         }
         //Schnee
-        for (let i = 0; i < schneeY.length; i++) {
+        for (var i = 0; i < schneeY.length; i++) {
             if (schneeY[i] > 600) {
                 schneeY[i] = 0;
             }
@@ -200,7 +200,7 @@ var aufgabe4;
             createSnow(schneeX[i], schneeY[i], ski);
         }
         //Skifahrer
-        for (let i = 0; i < skier.length; i++) {
+        for (var i = 0; i < skier.length; i++) {
             drawSkier(skier[i]);
             if (skier[i].x > 800, skier[i].y > 650) {
                 skier[i].x = 350;
@@ -211,139 +211,5 @@ var aufgabe4;
         }
         window.setTimeout(animate, 20);
     }
-})(aufgabe4 || (aufgabe4 = {})); //Aufgabe:    02 Canvas: Skipiste mit Funktion
-//Name:       Stephen Bodmer
-//Matrikel:   256218
-//Datum:      20.10.2017
-//Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
-//Er wurde nicht kopiert und auch nicht diktiert.
-var aufgabe3;
-(function (aufgabe3) {
-    window.addEventListener("load", skipiste);
-    let canvas = document.getElementsByTagName("canvas")[0];
-    console.log(canvas);
-    let ski = canvas.getContext("2d");
-    console.log(ski);
-    let arrayX = [];
-    let arrayY = [];
-    let sonneX = [];
-    let sonneY = [];
-    let image;
-    function skipiste() {
-        //Himmel
-        ski.fillStyle = "#81DAF5";
-        ski.fillRect(0, 0, 800, 600);
-        //        //Sonne
-        //        ski.beginPath();
-        //        ski.strokeStyle = "yellow";
-        //        ski.arc(700, 100, 50, 0, 2 * Math.PI);
-        //        ski.stroke();
-        //        ski.fillStyle = "yellow";
-        //        ski.fill();
-        //Berg 1
-        ski.beginPath();
-        ski.moveTo(200, 150);
-        ski.lineTo(500, 600);
-        ski.lineTo(-100, 800);
-        ski.closePath();
-        ski.strokeStyle = "grey";
-        ski.stroke();
-        ski.fillStyle = "grey";
-        ski.fill();
-        //Piste hinten
-        ski.beginPath();
-        ski.strokeStyle = "lightgrey";
-        ski.arc(650, 1370, 1000, 0, 2 * Math.PI);
-        ski.stroke();
-        ski.fillStyle = "white";
-        ski.fill();
-        //Berg vorne
-        ski.beginPath();
-        ski.moveTo(80, 200);
-        ski.lineTo(300, 600);
-        ski.lineTo(-100, 600);
-        ski.closePath();
-        ski.strokeStyle = "lightgrey";
-        ski.stroke();
-        ski.fillStyle = "lightgrey";
-        ski.fill();
-        //Piste vorne
-        ski.beginPath();
-        ski.strokeStyle = "lightgrey";
-        ski.arc(300, 1750, 1300, 0, 2 * Math.PI);
-        ski.stroke();
-        ski.fillStyle = "white";
-        ski.fill();
-        //Wolke
-        ski.beginPath();
-        ski.arc(100, 75, 25, 0, 2 * Math.PI);
-        ski.arc(110, 50, 30, 0, 2 * Math.PI);
-        ski.arc(125, 50, 30, 0, 2 * Math.PI);
-        ski.arc(130, 70, 40, 0, 2 * Math.PI);
-        ski.arc(175, 70, 40, 0, 2 * Math.PI);
-        ski.arc(200, 70, 30, 0, 2 * Math.PI);
-        ski.strokeStyle = "darkgrey";
-        ski.stroke();
-        ski.fillStyle = "white";
-        ski.fill();
-        //Seilbahn
-        //Pfosten links
-        ski.beginPath();
-        ski.moveTo(245, 190);
-        ski.lineTo(245, 230);
-        ski.closePath();
-        ski.strokeStyle = "black";
-        ski.stroke();
-        //Pfosten rechts
-        ski.beginPath();
-        ski.moveTo(750, 350);
-        ski.lineTo(750, 400);
-        ski.closePath();
-        ski.strokeStyle = "black";
-        ski.stroke();
-        //Seil
-        ski.beginPath();
-        ski.moveTo(245, 190);
-        ski.lineTo(750, 350);
-        ski.closePath();
-        ski.strokeStyle = "black";
-        ski.stroke();
-        //Bäume
-        for (var i = 0; i < 40; i++) {
-            drawTree(Math.floor(Math.random() * 550 + 50), Math.floor(Math.random() * 100 + 480), ski);
-        }
-        for (var i = 0; i < 1000; i++) {
-            createSnow(Math.floor(Math.random() * (800 + 1)), Math.floor(Math.random() * (600 + 1)), ski);
-        }
-    }
-    function drawTree(x, y, ski) {
-        ski.fillStyle = "brown";
-        ski.fillRect(x, y, 8, 10);
-        ski.beginPath();
-        ski.moveTo(x - 10, y);
-        ski.lineTo(x + 15, y);
-        ski.lineTo(x + 4, y - 50);
-        ski.lineTo(x - 8, y);
-        ski.fillStyle = "green";
-        ski.fill();
-        ski.closePath();
-    }
-    function createSnow(x, y, ski) {
-        ski.beginPath();
-        ski.arc(x, y, 2, 0 * Math.PI, 2.0 * Math.PI);
-        ski.strokeStyle = "lightgrey";
-        ski.stroke();
-        ski.fillStyle = "white";
-        ski.fill();
-        ski.closePath();
-    }
-    function sonne(x, y) {
-        ski.beginPath();
-        ski.strokeStyle = "yellow";
-        ski.arc(700, 100, 50, 0, 2 * Math.PI);
-        ski.stroke();
-        ski.fillStyle = "yellow";
-        ski.fill();
-    }
-})(aufgabe3 || (aufgabe3 = {}));
+})(aufgabe4 || (aufgabe4 = {}));
 //# sourceMappingURL=hallo.js.map

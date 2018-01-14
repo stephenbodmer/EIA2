@@ -30,6 +30,12 @@ main{
   grid-column: 2/3;
   grid-row: 3/auto;
 }
+
+  .checkoutanschrift{
+    display: block;
+    margin: 1em 0;
+    padding: 0.5em;
+  }
 }
 
 @media screen and (min-width: 36.25em){

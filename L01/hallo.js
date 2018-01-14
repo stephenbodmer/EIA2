@@ -142,3 +142,4 @@ function skipiste() {
     ski.fillStyle = "darkgreen";
     ski.fill();
 }
+//# sourceMappingURL=hallo.js.map

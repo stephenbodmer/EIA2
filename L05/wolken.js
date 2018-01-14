@@ -6,19 +6,19 @@
 //Er wurde nicht kopiert und auch nicht diktiert.
 var aufgabe5;
 (function (aufgabe5) {
-    class Wolken {
-        constructor(x, y) {
+    var Wolken = /** @class */ (function () {
+        function Wolken(x, y) {
             this.x = x;
             this.y = y;
         }
-        moveWolken() {
+        Wolken.prototype.moveWolken = function () {
             if (this.x > 850) {
                 this.x = 0;
             }
             this.x += 1.5 * Math.random();
             this.createWolke();
-        }
-        createWolke() {
+        };
+        Wolken.prototype.createWolke = function () {
             aufgabe5.ski.beginPath();
             aufgabe5.ski.arc(this.x + 100, this.y + 75, 25, 0, 2 * Math.PI);
             aufgabe5.ski.arc(this.x + 110, this.y + 50, 30, 0, 2 * Math.PI);
@@ -30,8 +30,9 @@ var aufgabe5;
             aufgabe5.ski.stroke();
             aufgabe5.ski.fillStyle = "white";
             aufgabe5.ski.fill();
-        }
-    }
+        };
+        return Wolken;
+    }());
     aufgabe5.Wolken = Wolken;
 })(aufgabe5 || (aufgabe5 = {}));
 //# sourceMappingURL=wolken.js.map

@@ -6,7 +6,7 @@
 //Er wurde nicht kopiert und auch nicht diktiert.
 var aufgabe6;
 (function (aufgabe6) {
-    var MovingShapes = (function () {
+    var MovingShapes = /** @class */ (function () {
         function MovingShapes(x, y) {
             this.x = x;
             this.y = y;

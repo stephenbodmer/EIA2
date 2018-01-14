@@ -64,9 +64,7 @@ var Aufgabe9;
         b.style.position = "absolute";
         b.style.left = _event.pageX + "px";
         b.style.top = _event.pageY + "px";
-        b.addEventListener("click", writeLetter);
         document.body.appendChild(b);
-        var clicking = _event.target;
     }
 })(Aufgabe9 || (Aufgabe9 = {}));
 //# sourceMappingURL=main.js.map

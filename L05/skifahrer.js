@@ -6,8 +6,8 @@
 //Er wurde nicht kopiert und auch nicht diktiert.
 var aufgabe5;
 (function (aufgabe5) {
-    class Skiers {
-        constructor(x, y, dx, dy, color) {
+    var Skiers = /** @class */ (function () {
+        function Skiers(x, y, dx, dy, color) {
             this.x = x;
             this.y = y;
             this.dx = dx;
@@ -15,7 +15,7 @@ var aufgabe5;
             this.color = color;
         }
         //Skifahrer
-        moveSkier() {
+        Skiers.prototype.moveSkier = function () {
             if (this.x > 800, this.y > 650) {
                 this.x = 350;
                 this.y = 430; // Winkel in dem der Skier den Berg unter fährt 
@@ -23,9 +23,9 @@ var aufgabe5;
             this.x += 10;
             this.y += -10;
             this.drawSkier();
-        }
+        };
         //FSkifahrer 
-        drawSkier() {
+        Skiers.prototype.drawSkier = function () {
             this.x += this.dx;
             this.y += this.dy; // um andere Bewegungsmuster zu finden 
             aufgabe5.ski.fillStyle = this.color;
@@ -37,8 +37,9 @@ var aufgabe5;
             aufgabe5.ski.moveTo(this.x - 30, this.y - 15);
             aufgabe5.ski.lineTo(this.x + 40, this.y + 10);
             aufgabe5.ski.stroke();
-        }
-    }
+        };
+        return Skiers;
+    }());
     aufgabe5.Skiers = Skiers;
 })(aufgabe5 || (aufgabe5 = {}));
 //# sourceMappingURL=skifahrer.js.map

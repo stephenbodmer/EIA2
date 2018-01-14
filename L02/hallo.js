@@ -8,9 +8,9 @@ var aufgabe2;
 (function (aufgabe2) {
     window.addEventListener("load", skipiste);
     function skipiste() {
-        let canvas = document.getElementsByTagName("canvas")[0];
+        var canvas = document.getElementsByTagName("canvas")[0];
         console.log(canvas);
-        let ski = canvas.getContext("2d");
+        var ski = canvas.getContext("2d");
         console.log(ski);
         //Himmel
         ski.fillStyle = "#81DAF5";

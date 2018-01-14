@@ -14,6 +14,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="weihnachten.css" media="only screen">
   <script src="weihnachten.js"></script>
+  <script src="data.js"></script>
   <title>Weihnachtsfreude</title>
 </head>
 
@@ -23,84 +24,36 @@
   <div id="main">
 
     <!-- Baumart -->
-    <fieldset>
+    <fieldset id="baumart">
       <legend>Wähle deine Baumart!</legend>
-      <label for="ba-1">
-      <input type="radio" name="Baum" value="30" id="Blaufichte">
-      Blaufichte (30$)</label>
-      <br>
-      <label for="ba-2">
-      <input type="radio" name="Baum" value="40" id="Douglasie">
-      Douglasie (40$)</label>
-      <br>
-      <label for="ba-3">
-      <input type="radio" name="Baum" value="25" id="Nordmanntanne">
-      Nordmanntanne (25$)</label>
-      <br>
-      <label for="ba-4">
-      <input type="radio" name="Baum" value="15" id="Rotfichte">
-      Rotfichte (15$)</label>
-    </fieldset>;
+
+    </fieldset>
 
     <!-- Baumgröße -->
-    <fieldset>
+    <fieldset id="baumgröße">
       <legend>Wie groß soll dein Baum sein?</legend>
-      <input type="range" name="slider" value="100" min="100" max="200" step="10">
-      <p>Baumgröße ca. <span id="bg-slider">---</span> cm</p>
+      <!-- <input type="range" name="slider" value="100" min="100" max="200" step="10"> -->
+      <!-- <p>Baumgröße ca. <span id="bg-slider">---</span> cm</p> -->
 
     </fieldset>
 
     <!-- Halterung -->
-    <fieldset>
+    <fieldset id="halterung">
       <legend>Brauchst du eine Halterung?</legend>
-      <select class="halterung" name="Halterung">
-        <option value="50">Premium</option>
-        <option value="25">Standard</option>
-        <option value="10">billigscheiß</option>
-        <option value="42">Classic</option>
-        <option value="0" selected>keine</option>
-      </select>
+
     </fieldset>
 
     <!-- Deko -->
-    <fieldset>
+    <fieldset id="deko">
       <legend>Wähle deinen Baumschmuck!</legend>
 
-      <input type="checkbox" name="checkbox1" value="15">
-      <label for="checkbox1">Kugeln</label>
-      <br>
-      <input type="checkbox" name="checkbox1" value="9">
-      <label for="checkbox2">Sterne</label>
-      <br>
-      <input type="checkbox" name="checkbox1" value="13">
-      <label for="checkbox3">Engel</label>
-      <br>
-      <input type="checkbox" name="checkbox1" value="3">
-      <label for="checkbox4">Lametta</label>
-      <br>
-      <input type="checkbox" name="checkbox1" value="99">
-      <label for="checkbox5">Überraschung</label>
     </fieldset>
 
 
     <!-- Farbschema -->
-   <fieldset>
+   <fieldset id="farbkombination">
       <legend>Wähle deinen Farbkombination!</legend>
 
-      <input type="checkbox" name="checkbox01" value="2">
-      <label for="checkbox01">rot</label>
-      <br>
-      <input type="checkbox" name="checkbox01" value="1">
-      <label for="checkbox02">grün</label>
-      <br>
-      <input type="checkbox" name="checkbox01" value="5">
-      <label for="checkbox03">gold</label>
-      <br>
-      <input type="checkbox" name="checkbox01" value="1">
-      <label for="checkbox04">pink</label>
-      <br>
-      <input type="checkbox" name="checkbox01" value="2">
-      <label for="checkbox05">blau</label>
     </fieldset>
 
 
@@ -115,24 +68,14 @@
 
       </div>
 
+      <div id="versand">
       <p>Versandoption</p>
-     <select class="versand" name="Select">
-       <optgroup label="DHL">
-         <option value="15" checked>Premium</option>
-         <option value="3">Standard</option>
-       </optgroup>
-       <optgroup label="DPD">
-         <option value="10">Premium</option>
-         <option value="5">Standard</option>
-       </optgroup>
-     </select>
 
-     <p>Zahlungsart</p>
-     <select class="zahlungsart" name="Select">
-       <option value="">PayPal</option>
-       <option value="">Kreditkarte</option>
-       <option value="">Überweisung</option>
-     </select>
+      </div>
+      <div id="zahlungsart">
+      <p>Zahlungsart</p>
+
+      </div>
 
      <p>Wie viel möchtest du bestellen?</p>
      <input type="number" name="stepper" value="1" min="1" max="1000000" step="1">

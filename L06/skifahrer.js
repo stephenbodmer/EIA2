@@ -16,7 +16,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var aufgabe6;
 (function (aufgabe6) {
-    var Skiers = (function (_super) {
+    var Skiers = /** @class */ (function (_super) {
         __extends(Skiers, _super);
         function Skiers(x, y, dx, dy, color) {
             var _this = _super.call(this, x, y) || this;
