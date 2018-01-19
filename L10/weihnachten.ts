@@ -26,7 +26,7 @@ namespace weihnachtsfreude{
   var shipment: HTMLSelectElement;
   var payment: HTMLInputElement;
   var quantity: HTMLInputElement;
-  var br: HTMLElement = document.createElement('br');
+
 
 
 
@@ -50,6 +50,8 @@ function buildHTML(): void{
     baLabel.id= "label" + baumData[i].name;
     baLabel.htmlFor="Baum";
     baumart.appendChild(baLabel);
+    var br: HTMLElement = document.createElement("br");
+    baumart.appendChild(br);
   }
 
   //BAUMGRÖßE
@@ -95,6 +97,8 @@ function buildHTML(): void{
     bsLabel.id= "label" + schmuckData[i].name;
     bsLabel.htmlFor="checkbox1";
     deko.appendChild(bsLabel);
+    var br: HTMLElement = document.createElement("br");
+    deko.appendChild(br);
   }
 
   // FARBE
@@ -112,6 +116,8 @@ function buildHTML(): void{
     feLabel.id= "Label" + farbData[i].name;
     feLabel.htmlFor="checkbox01";
     farbe.appendChild(feLabel);
+    var br: HTMLElement = document.createElement("br");
+    farbe.appendChild(br);
   }
 
   let CheckOut: HTMLDivElement = <HTMLDivElement>document.getElementById("checkout");
@@ -157,7 +163,7 @@ function buildHTML(): void{
          var vd: HTMLOptionElement = document.createElement("option");
          vd.id=versandData[i].name;
          vd.value=String(versandData[i].price);
-         vd.innerText=versandData[i].name + " (" + versandData[i].beschr + ")";
+         vd.innerText=versandData[i].name + " " + versandData[i].beschr;
          selectVersand.appendChild(vd);
        }
    Versand.appendChild(selectVersand);

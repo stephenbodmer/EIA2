@@ -3,7 +3,7 @@ namespace weihnachtsfreude {
 
   export interface christmasData{
     name: string;
-    price: number;
+    price?: number;
     beschr?: string;              //durch ? wird die Angabe optional
   }
 
@@ -39,13 +39,15 @@ namespace weihnachtsfreude {
   ];
 
   export let versandData: christmasData[] = [
-    {name:"Premium", price:15, beschr:"DHL"},
-    {name:"Standard", price:3, beschr:"DHL"},
-    {name:"Premium", price:10, beschr:"DPD"},
-    {name:"Standard", price:5, beschr:"DPD"},
+    {name:"bitte wählen", price:0, beschr:""},
+    {name:"Premium", price:15, beschr:"(DHL)"},
+    {name:"Standard", price:3, beschr:"(DHL)"},
+    {name:"Premium", price:10, beschr:"(DPD)"},
+    {name:"Standard", price:5, beschr:"(DPD)"},
   ];
 
   export let zahlungData: christmasData[] = [
+    {name:"bitte wählen", price:0},
     {name:"PayPal", price:0},
     {name:"Kreditkarte", price:5},
     {name:"Überweisung", price:2}

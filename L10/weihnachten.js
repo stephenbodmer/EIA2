@@ -22,7 +22,6 @@ var weihnachtsfreude;
     var shipment;
     var payment;
     var quantity;
-    var br = document.createElement('br');
     window.addEventListener("load", buildHTML);
     window.addEventListener("change", handleChange);
     function buildHTML() {
@@ -40,6 +39,8 @@ var weihnachtsfreude;
             baLabel.id = "label" + weihnachtsfreude.baumData[i].name;
             baLabel.htmlFor = "Baum";
             baumart.appendChild(baLabel);
+            var br = document.createElement("br");
+            baumart.appendChild(br);
         }
         //BAUMGRÖßE
         var baumgröße = document.getElementById("baumgröße");
@@ -81,6 +82,8 @@ var weihnachtsfreude;
             bsLabel.id = "label" + weihnachtsfreude.schmuckData[i].name;
             bsLabel.htmlFor = "checkbox1";
             deko.appendChild(bsLabel);
+            var br = document.createElement("br");
+            deko.appendChild(br);
         }
         // FARBE
         var farbe = document.getElementById("farbkombination");
@@ -96,6 +99,8 @@ var weihnachtsfreude;
             feLabel.id = "Label" + weihnachtsfreude.farbData[i].name;
             feLabel.htmlFor = "checkbox01";
             farbe.appendChild(feLabel);
+            var br = document.createElement("br");
+            farbe.appendChild(br);
         }
         var CheckOut = document.getElementById("checkout");
         name = document.createElement("input");
@@ -135,7 +140,7 @@ var weihnachtsfreude;
             var vd = document.createElement("option");
             vd.id = weihnachtsfreude.versandData[i].name;
             vd.value = String(weihnachtsfreude.versandData[i].price);
-            vd.innerText = weihnachtsfreude.versandData[i].name + " (" + weihnachtsfreude.versandData[i].beschr + ")";
+            vd.innerText = weihnachtsfreude.versandData[i].name + " " + weihnachtsfreude.versandData[i].beschr;
             selectVersand.appendChild(vd);
         }
         Versand.appendChild(selectVersand);
