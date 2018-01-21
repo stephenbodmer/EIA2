@@ -37,7 +37,7 @@ var weihnachtsfreude;
             var baLabel = document.createElement("label");
             baLabel.innerText = weihnachtsfreude.baumData[i].name + " (" + weihnachtsfreude.baumData[i].price + "$)";
             baLabel.id = "label" + weihnachtsfreude.baumData[i].name;
-            baLabel.htmlFor = "Baum";
+            baLabel.htmlFor = weihnachtsfreude.baumData[i].name;
             baumart.appendChild(baLabel);
             var br = document.createElement("br");
             baumart.appendChild(br);

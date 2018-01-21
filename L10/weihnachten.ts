@@ -48,7 +48,7 @@ function buildHTML(): void{
     var baLabel: HTMLLabelElement = document.createElement("label");
     baLabel.innerText = baumData[i].name + " (" + baumData[i].price + "$)";
     baLabel.id= "label" + baumData[i].name;
-    baLabel.htmlFor="Baum";
+    baLabel.htmlFor=baumData[i].name;
     baumart.appendChild(baLabel);
     var br: HTMLElement = document.createElement("br");
     baumart.appendChild(br);
