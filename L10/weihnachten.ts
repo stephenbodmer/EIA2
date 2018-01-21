@@ -95,7 +95,7 @@ function buildHTML(): void{
     var bsLabel: HTMLLabelElement = document.createElement("label");
     bsLabel.innerText = schmuckData[i].name + " (" + schmuckData[i].price + "$)";
     bsLabel.id= "label" + schmuckData[i].name;
-    bsLabel.htmlFor="checkbox1";
+    bsLabel.htmlFor=schmuckData[i].name;
     deko.appendChild(bsLabel);
     var br: HTMLElement = document.createElement("br");
     deko.appendChild(br);
@@ -114,7 +114,7 @@ function buildHTML(): void{
     var feLabel: HTMLLabelElement = document.createElement("label");
     feLabel.innerText = farbData[i].name + " (" + farbData[i].price + "$)";
     feLabel.id= "Label" + farbData[i].name;
-    feLabel.htmlFor="checkbox01";
+    feLabel.htmlFor=farbData[i].name;
     farbe.appendChild(feLabel);
     var br: HTMLElement = document.createElement("br");
     farbe.appendChild(br);
