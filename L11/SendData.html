@@ -1,42 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-<title>SendData</title>
+<title>Weihnachtsfreude</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" href="SendData.css" type="text/css" media="screen"/>
-<!--  -->
+<link rel="stylesheet" type="text/css" href="weihnachten.css" media="only screen">
+<script src="weihnachten.js"></script>
+<script src="data.js"></script>
 <script src="SendData.js" type="text/javascript" charset="utf-8"></script>
-<!--  -->
+
 </head>
 <body>
-	<!--  - ->
-	<form action="SendData.html" method="get">
-	<!--  - ->
-	<form action="http://localhost:8100" method="get">
-	<!--  -->
+
 	<form action="https://eia2-database.herokuapp.com" method="get">
-	<!--  -->
-		<fieldset id="radio">
-			<legend> Choose color with radio buttons </legend>
-			<input type="radio" name="color" value="red" id="red" />
-			<label for="red">Red</label>
-			<input type="radio" name="color" value="green" id="green"/>
-			<label for="green">Green</label>
-			<input type="radio" name="color" value="blue" id="blue"/>
-			<label for="blue">Blue</label>
-		</fieldset>
 
-		<input type="text" name="text" value="type here"/>
+		<main>
 
-		<button type="submit">Submit</button>
-	</form>
-	<!--  -->
-	<fieldset id="div">
-		<legend> Pick color with divs </legend>
-		<div></div>
-		<div></div>
-		<div></div>
-	</fieldset>
-	<!--  -->
+		  <div id="main">
+
+		    <!-- Baumart -->
+		    <fieldset id="baumart">
+		      <legend>Wähle deine Baumart!</legend>
+
+		    </fieldset>
+
+		    <!-- Baumgröße -->
+		    <fieldset id="baumgröße">
+		      <legend>Wie groß soll dein Baum sein?</legend>
+
+		    </fieldset>
+
+		    <!-- Halterung -->
+		    <fieldset id="halterung">
+		      <legend>Brauchst du eine Halterung?</legend>
+
+		    </fieldset>
+
+		    <!-- Deko -->
+		    <fieldset id="deko">
+		      <legend>Wähle deinen Baumschmuck!</legend>
+
+		    </fieldset>
+
+		    <!-- Farbschema -->
+		   <fieldset id="farbkombination">
+		      <legend>Wähle deinen Farbkombination!</legend>
+
+		    </fieldset>
+
+
+		  </div>
+		</main>
+
+		  <div id="aside">
+
+		    <fieldset>
+		      <legend>Bestelldetails</legend>
+		      <div id="checkout">
+
+		      </div>
+
+		      <div id="versand">
+		      <p>Versandoption</p>
+
+		      </div>
+		      <div id="zahlungsart">
+		      <p>Zahlungsart</p>
+
+		      </div>
+
+		     <p>Wie viel möchtest du bestellen?</p>
+		     <input type="number" name="stepper" value="1" min="1" max="1000000" step="1">
+
+
+		      <p>Preis: <span id="preis-ges">0</span> $</p>
+		      <br>
+
+		      <button type="button" name="bestellen" id="prufung">Bestellung prüfen!</button>
+
+		    </fieldset>
+
+		  </div>
+
+
 </body>
 </html>
