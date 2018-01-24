@@ -27,7 +27,7 @@ namespace weihnachtsfreude{
   var payment: HTMLInputElement;
   var quantity: HTMLInputElement;
 
-
+  let prufen: HTMLDivElement = document.createElement("div");
 
 
 window.addEventListener("load", buildHTML);
@@ -233,4 +233,18 @@ function handleChange(_event: Event): void {
   gespreis= ((baum*height)+halterung+deko+color+shipping+zahlung)*menge;
   document.getElementById("preis-ges").innerHTML = String(gespreis);
   }
+
+  function PrufeDaten(): void {
+
+    prufen.innerText = "";
+    if (name.checkValidity() == false || persVorname.checkValidity() == false || persMail.checkValidity() == false || persPlz.checkValidity() == false || persAdresse.checkValidity() == false) {
+        prufen.innerText = "Deine Eingabe war leider fehlerhaft! Überprüfe sie noch einmal.";
+        prufen.style.color = "red";
+        document.body.appendChild(prufen);
+    }
+    else {
+        prufen.innerText = "Deine Bestellung wurde erfolgreich verifiziert!";
+        prufen.style.color = "green";
+        document.body.appendChild(prufen);
+    }
 }

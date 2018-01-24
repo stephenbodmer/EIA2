@@ -22,6 +22,7 @@ var weihnachtsfreude;
     var shipment;
     var payment;
     var quantity;
+    var prufen = document.createElement("div");
     window.addEventListener("load", buildHTML);
     window.addEventListener("change", handleChange);
     function buildHTML() {
@@ -203,6 +204,19 @@ var weihnachtsfreude;
         }
         gespreis = ((baum * height) + halterung + deko + color + shipping + zahlung) * menge;
         document.getElementById("preis-ges").innerHTML = String(gespreis);
+    }
+    function PrufeDaten() {
+        prufen.innerText = "";
+        if (name.checkValidity() == false || persVorname.checkValidity() == false || persMail.checkValidity() == false || persPlz.checkValidity() == false || persAdresse.checkValidity() == false) {
+            prufen.innerText = "Deine Eingabe war leider fehlerhaft! Überprüfe sie noch einmal.";
+            prufen.style.color = "red";
+            document.body.appendChild(prufen);
+        }
+        else {
+            prufen.innerText = "Deine Bestellung wurde erfolgreich verifiziert!";
+            prufen.style.color = "green";
+            document.body.appendChild(prufen);
+        }
     }
 })(weihnachtsfreude || (weihnachtsfreude = {}));
 //# sourceMappingURL=weihnachten.js.map
