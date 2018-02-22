@@ -1,0 +1,13 @@
+html{
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.canvasdiv{
+}
+
+#canvas{
+  border: 1px solid black;
+}
