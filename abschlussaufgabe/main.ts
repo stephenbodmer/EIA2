@@ -62,6 +62,7 @@ function animate(): void {
 
     window.setTimeout(animate, 10);
 }
+
 //
 // function buttondraw(): void {
 //     let buttonup: HTMLButtonElement = document.createElement("button");
