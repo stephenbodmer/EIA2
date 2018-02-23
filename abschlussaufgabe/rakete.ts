@@ -20,16 +20,16 @@ moveRakete(): void{
 drawRakete(): void {
   r.beginPath();
   r.strokeStyle = "white";
-  r.moveTo(100, 200);
-  r.lineTo(105, 210);
-  r.lineTo(103, 240);
-  r.lineTo(110, 245);
-  r.lineTo(110, 250);
-  r.lineTo(100, 245);
-  r.lineTo(90, 250);
-  r.lineTo(90, 245);
-  r.lineTo(97, 240);
-  r.lineTo(95, 210);
+  r.moveTo(this.x+100, this.y+200);
+  r.lineTo(this.x+105, this.y+210);
+  r.lineTo(this.x+103, this.y+240);
+  r.lineTo(this.x+110, this.y+245);
+  r.lineTo(this.x+110, this.y+250);
+  r.lineTo(this.x+100, this.y+245);
+  r.lineTo(this.x+90, this.y+250);
+  r.lineTo(this.x+90, this.y+245);
+  r.lineTo(this.x+97, this.y+240);
+  r.lineTo(this.x+95, this.y+210);
   r.stroke();
   r.fillStyle = "white";
   r.fill();
