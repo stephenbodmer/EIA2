@@ -4,7 +4,7 @@ var abschluss;
     var imgData;
     var score = 0;
     var end = false;
-    var hitbox = 10;
+    var hitbox = 15;
     var fallingMeteor = [];
     var movingRakete;
     // let movingRakete: Rakete = new Rakete(2,3);
@@ -25,7 +25,7 @@ var abschluss;
         for (var i = 0; i < 10; i++) {
             fallingMeteor[i] = new abschluss.Meteorschauer(Math.random() * 800, Math.random() * (-600));
         }
-        movingRakete = new abschluss.Rakete(300, 300);
+        movingRakete = new abschluss.Rakete(400, 500);
         imgData = abschluss.r.getImageData(0, 0, canvas.width, canvas.height);
         animate();
         buttondraw();

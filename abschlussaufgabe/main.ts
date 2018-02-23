@@ -7,7 +7,7 @@ window.addEventListener("load", spielwiese);
 let imgData: ImageData;
 let score: number = 0;
 let end: boolean = false;
-let hitbox: number = 10;
+let hitbox: number = 15;
 var fallingMeteor: Meteorschauer[] = [];
 var movingRakete: Rakete;
 // let movingRakete: Rakete = new Rakete(2,3);
@@ -36,7 +36,7 @@ function spielwiese(): void {
         fallingMeteor[i] = new Meteorschauer(Math.random() * 800, Math.random() * (-600));
     }
 
-    movingRakete = new Rakete(300,300);
+    movingRakete = new Rakete(400,500);
 
     imgData = r.getImageData(0, 0, canvas.width, canvas.height);
     animate();
