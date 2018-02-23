@@ -104,7 +104,7 @@ function re(): void {
 
 function collision(): void {
 
-    for (let i: number = 1; i < fallingMeteor.length; i++) {
+    for (let i: number = 0; i < fallingMeteor.length; i++) {
         let x: number;
         let y: number;
         x = Math.abs(fallingMeteor[i].x - movingRakete.x);

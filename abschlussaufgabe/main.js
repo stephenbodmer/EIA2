@@ -77,7 +77,7 @@ var abschluss;
         movingRakete.x += 10;
     }
     function collision() {
-        for (var i = 1; i < fallingMeteor.length; i++) {
+        for (var i = 0; i < fallingMeteor.length; i++) {
             var x = void 0;
             var y = void 0;
             x = Math.abs(fallingMeteor[i].x - movingRakete.x);
