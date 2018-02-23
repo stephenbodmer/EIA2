@@ -5,7 +5,7 @@ var abschluss;
     var score = 0;
     var end = false;
     var fallingMeteor = [];
-    var movingRakete = [];
+    var movingRakete;
     // let movingRakete: Rakete = new Rakete(2,3);
     function spielwiese() {
         var canvas = document.getElementsByTagName("canvas")[0];
@@ -24,9 +24,7 @@ var abschluss;
         for (var i = 0; i < 10; i++) {
             fallingMeteor[i] = new abschluss.Meteorschauer(Math.random() * 800, Math.random() * 600);
         }
-        for (var i = 0; i < 1; i++) {
-            movingRakete[i] = new abschluss.Rakete(300, 300);
-        }
+        movingRakete = new abschluss.Rakete(300, 300);
         imgData = abschluss.r.getImageData(0, 0, canvas.width, canvas.height);
         animate();
     }
@@ -37,10 +35,6 @@ var abschluss;
         for (var i = 0; i < fallingMeteor.length; i++) {
             var meteor = fallingMeteor[i];
             meteor.moveMeteor();
-        }
-        for (var i = 0; i < 1; i++) {
-            var ra = movingRakete[i];
-            ra.moveRakete();
         }
         window.setTimeout(animate, 10);
     }
@@ -72,17 +66,17 @@ var abschluss;
     // }
     //
     //
-    // function moveUp(): void {
-    //     movingRakete.y -= 10;
-    // }
-    // function moveDown(): void {
-    //     movingRakete.y += 10;
-    // }
-    // function moveLeft(): void {
-    //     movingRakete.x -= 10;
-    // }
-    // function moveRight(): void {
-    //     movingRakete.x += 10;
-    // }
+    function moveUp() {
+        movingRakete.y -= 10;
+    }
+    function moveDown() {
+        movingRakete.y += 10;
+    }
+    function moveLeft() {
+        movingRakete.x -= 10;
+    }
+    function moveRight() {
+        movingRakete.x += 10;
+    }
 })(abschluss || (abschluss = {}));
 //# sourceMappingURL=main.js.map

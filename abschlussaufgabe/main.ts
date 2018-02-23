@@ -9,7 +9,7 @@ let score: number = 0;
 let end: boolean = false;
 
 var fallingMeteor: Meteorschauer[] = [];
-var movingRakete: Rakete[]=[];
+var movingRakete: Rakete;
 // let movingRakete: Rakete = new Rakete(2,3);
 
 
@@ -35,9 +35,8 @@ function spielwiese(): void {
     for (let i: number = 0; i < 10; i++) {
         fallingMeteor[i] = new Meteorschauer(Math.random() * 800, Math.random() * 600);
     }
-    for (let i: number = 0; i < 1; i++) {
-        movingRakete[i] = new Rakete(300,300);
-    }
+
+    movingRakete = new Rakete(300,300);
 
     imgData = r.getImageData(0, 0, canvas.width, canvas.height);
     animate();
@@ -53,11 +52,6 @@ function animate(): void {
     for (let i: number = 0; i < fallingMeteor.length; i++) {
         let meteor: Meteorschauer = fallingMeteor[i];
         meteor.moveMeteor();
-    }
-
-    for (let i: number = 0; i < 1; i++) {
-        let ra: Rakete = movingRakete[i];
-        ra.moveRakete();
     }
 
     window.setTimeout(animate, 10);
@@ -91,17 +85,17 @@ function animate(): void {
 // }
 //
 //
-// function moveUp(): void {
-//     movingRakete.y -= 10;
-// }
-// function moveDown(): void {
-//     movingRakete.y += 10;
-// }
-// function moveLeft(): void {
-//     movingRakete.x -= 10;
-// }
-// function moveRight(): void {
-//     movingRakete.x += 10;
-// }
+function moveUp(): void {
+    movingRakete.y -= 10;
+}
+function moveDown(): void {
+    movingRakete.y += 10;
+}
+function moveLeft(): void {
+    movingRakete.x -= 10;
+}
+function moveRight(): void {
+    movingRakete.x += 10;
+}
 
 }
