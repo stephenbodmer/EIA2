@@ -10,9 +10,19 @@ export class Rakete {
 }
 
 moveRakete(): void{
-
+  if (this.y>550){
+    this.y=550;
+  }
+  if (this.y<0){
+    this.y=600;
+  }
+  if (this.x>800){
+    this.x=0;
+  }
+  if (this.x<0){
+    this.x=800;
+  }
   this.drawRakete();
-  this.drawPunkt();
 }
 
 drawRakete(): void {
@@ -31,31 +41,9 @@ drawRakete(): void {
   r.stroke();
   r.fillStyle = "white";
   r.fill();
-  // r.beginPath();
-  // r.strokeStyle = "white";
-  // r.moveTo(this.x+100, this.y+200);
-  // r.lineTo(this.x+105, this.y+210);
-  // r.lineTo(this.x+103, this.y+240);
-  // r.lineTo(this.x+110, this.y+245);
-  // r.lineTo(this.x+110, this.y+250);
-  // r.lineTo(this.x+100, this.y+245);
-  // r.lineTo(this.x+90, this.y+250);
-  // r.lineTo(this.x+90, this.y+245);
-  // r.lineTo(this.x+97, this.y+240);
-  // r.lineTo(this.x+95, this.y+210);
-  // r.stroke();
-  // r.fillStyle = "white";
-  // r.fill();
+
 }
 
-drawPunkt(): void{
-//   r.beginPath();
-//   r.arc(this.x, this.y, 10, 0 * Math.PI, 2.0 * Math.PI);
-//   r.strokeStyle = "lightgrey";
-//   r.stroke();
-//   r.fillStyle = "white";
-//   r.fill();
-//   r.closePath();
-}
+
 }
 }
