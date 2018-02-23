@@ -22,7 +22,7 @@ var abschluss;
         abschluss.r.fillStyle = "#B43104";
         abschluss.r.fill();
         //Meteorschauer
-        for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < 20; i++) {
             fallingMeteor[i] = new abschluss.Meteorschauer(Math.random() * 800, Math.random() * (-600));
         }
         movingRakete = new abschluss.Rakete(400, 500);

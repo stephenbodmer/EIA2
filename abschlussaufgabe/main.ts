@@ -32,7 +32,7 @@ function spielwiese(): void {
 
 
     //Meteorschauer
-    for (let i: number = 0; i < 10; i++) {
+    for (let i: number = 0; i < 20; i++) {
         fallingMeteor[i] = new Meteorschauer(Math.random() * 800, Math.random() * (-600));
     }
 
