@@ -18,12 +18,17 @@ namespace abschluss {
             this.y += Math.round(Math.random() * 5);
 
             this.score();
-
             this.createMeteor();
         }
 
         createMeteor(): void {
-
+          r.beginPath();
+          r.arc(this.x, this.y, 5, 0 * Math.PI, 2.0 * Math.PI);
+          r.strokeStyle = "lightgrey";
+          r.stroke();
+          r.fillStyle = "white";
+          r.fill();
+          r.closePath();
         }
 
         score(): void{

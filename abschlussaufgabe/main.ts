@@ -10,7 +10,7 @@ let end: boolean = false;
 
 var fallingMeteor: Meteorschauer[] = [];
 // var movingRakete: Rakete[]=[];
-let movingRakete: Rakete= new Rakete(400,300);
+let movingRakete: Rakete;
 
 
 function spielwiese(): void {
@@ -59,54 +59,53 @@ function animate(): void {
         meteor.moveMeteor();
     }
 
-
-    // for (let i: number = 0; i < 1; i++) {
-    //     let ra: Rakete = movingRakete[i];
-    //     ra.moveRakete();
-    // }
+    for (let i: number = 0; i < 1; i++) {
+        let ra: Rakete = movingRakete[i];
+        ra.moveRakete();
+    }
 
     window.setTimeout(animate, 10);
 }
 
-// function buttondraw(): void {
-//     let buttonup: HTMLButtonElement = document.createElement("button");
-//     buttonup.innerText = "UP";
-//     buttonup.id = "ButtonUp";
-//     buttonup.addEventListener("click", moveUp);
-//     document.body.appendChild(buttonup);
-//
-//     let buttonleft: HTMLButtonElement = document.createElement("button");
-//     buttonleft.innerText = "LEFT";
-//     buttonleft.id = "ButtonLeft";
-//     buttonleft.addEventListener("click", moveLeft);
-//     document.body.appendChild(buttonleft);
-//
-//     let buttonright: HTMLButtonElement = document.createElement("button");
-//     buttonright.innerText = "RIGHT";
-//     buttonright.id = "ButtonRight";
-//     buttonright.addEventListener("click", moveRight);
-//     document.body.appendChild(buttonright);
-//
-//     let buttondown: HTMLButtonElement = document.createElement("button");
-//     buttondown.innerText = "DOWN";
-//     buttondown.id = "ButtonDown";
-//     buttondown.addEventListener("click", moveDown);
-//     document.body.appendChild(buttondown);
-// }
-//
-//
-// function moveUp(): void {
-//     rocket.y -= 10;
-// }
-// function moveDown(): void {
-//     rocket.y += 10;
-// }
-// function moveLeft(): void {
-//     rocket.x -= 10;
-// }
-// function moveRight(): void {
-//     rocket.x += 10;
-// }
+function buttondraw(): void {
+    let buttonup: HTMLButtonElement = document.createElement("button");
+    buttonup.innerText = "UP";
+    buttonup.id = "ButtonUp";
+    buttonup.addEventListener("click", moveUp);
+    document.body.appendChild(buttonup);
+
+    let buttonleft: HTMLButtonElement = document.createElement("button");
+    buttonleft.innerText = "LEFT";
+    buttonleft.id = "ButtonLeft";
+    buttonleft.addEventListener("click", moveLeft);
+    document.body.appendChild(buttonleft);
+
+    let buttonright: HTMLButtonElement = document.createElement("button");
+    buttonright.innerText = "RIGHT";
+    buttonright.id = "ButtonRight";
+    buttonright.addEventListener("click", moveRight);
+    document.body.appendChild(buttonright);
+
+    let buttondown: HTMLButtonElement = document.createElement("button");
+    buttondown.innerText = "DOWN";
+    buttondown.id = "ButtonDown";
+    buttondown.addEventListener("click", moveDown);
+    document.body.appendChild(buttondown);
+}
+
+
+function moveUp(): void {
+    movingRakete.y -= 10;
+}
+function moveDown(): void {
+    movingRakete.y += 10;
+}
+function moveLeft(): void {
+    movingRakete.x -= 10;
+}
+function moveRight(): void {
+    movingRakete.x += 10;
+}
 
 }
 
