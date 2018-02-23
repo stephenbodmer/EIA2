@@ -8,6 +8,7 @@ var abschluss;
     var movingRakete;
     // let movingRakete: Rakete = new Rakete(2,3);
     function spielwiese() {
+        alert("Herzlich Willkommen zu wilden  Spaceabenteuern.\nDu bist mit deinem Raumschiff in einen\ngroßen, wilden Meteorschauer geraten. Hilf der\nCrew hindurch zu manövrieren.\n\nBenutze dafür die Steuerungsbuttons um das Schiff \nnach vorne/hinten und rechts/links zu bewegen.\n");
         var canvas = document.getElementsByTagName("canvas")[0];
         abschluss.r = canvas.getContext("2d");
         //Background
@@ -27,7 +28,7 @@ var abschluss;
         movingRakete = new abschluss.Rakete(400, 500);
         imgData = abschluss.r.getImageData(0, 0, canvas.width, canvas.height);
         animate();
-        buttondraw();
+        createButton();
     }
     // Animate
     function animate() {
@@ -43,39 +44,35 @@ var abschluss;
         highscore();
         window.setTimeout(animate, 10);
     }
-    function buttondraw() {
+    function createButton() {
         var buttonup = document.createElement("button");
         buttonup.innerText = "↑";
-        buttonup.id = "ButtonUp";
         buttonup.addEventListener("click", hoch);
         document.body.appendChild(buttonup);
         var buttonleft = document.createElement("button");
         buttonleft.innerText = "←";
-        buttonleft.id = "ButtonLeft";
         buttonleft.addEventListener("click", li);
         document.body.appendChild(buttonleft);
         var buttonright = document.createElement("button");
         buttonright.innerText = "→";
-        buttonright.id = "ButtonRight";
         buttonright.addEventListener("click", re);
         document.body.appendChild(buttonright);
         var buttondown = document.createElement("button");
         buttondown.innerText = "↓";
-        buttondown.id = "ButtonDown";
         buttondown.addEventListener("click", runter);
         document.body.appendChild(buttondown);
     }
     function hoch() {
-        movingRakete.y -= 10;
+        movingRakete.y -= 15;
     }
     function runter() {
-        movingRakete.y += 10;
+        movingRakete.y += 15;
     }
     function li() {
-        movingRakete.x -= 10;
+        movingRakete.x -= 15;
     }
     function re() {
-        movingRakete.x += 10;
+        movingRakete.x += 15;
     }
     function highscore() {
         for (var i = 1; i < fallingMeteor.length; i++) {
@@ -96,7 +93,7 @@ var abschluss;
                 verloren();
             }
             function verloren() {
-                alert("Looser. Du hast" + score + "Punkte erreicht.");
+                alert("Looser.\n\n Du hast " + score + " Punkte erreicht.");
                 location.reload();
             }
         }

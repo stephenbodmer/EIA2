@@ -14,6 +14,8 @@ var movingRakete: Rakete;
 
 function spielwiese(): void {
 
+  alert("Herzlich Willkommen zu wilden  Spaceabenteuern.\nDu bist mit deinem Raumschiff in einen\ngroßen, wilden Meteorschauer geraten. Hilf der\nCrew hindurch zu manövrieren.\n\nBenutze dafür die Steuerungsbuttons um das Schiff \nnach vorne/hinten und rechts/links zu bewegen.\n")
+
   let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
   r = canvas.getContext("2d");
 
@@ -39,7 +41,7 @@ function spielwiese(): void {
 
     imgData = r.getImageData(0, 0, canvas.width, canvas.height);
     animate();
-    buttondraw();
+    createButton();
     }
 
 
@@ -62,44 +64,40 @@ function animate(): void {
 }
 
 
-function buttondraw(): void {
+function createButton(): void {
     let buttonup: HTMLButtonElement = document.createElement("button");
     buttonup.innerText = "↑";
-    buttonup.id = "ButtonUp";
     buttonup.addEventListener("click", hoch);
     document.body.appendChild(buttonup);
 
     let buttonleft: HTMLButtonElement = document.createElement("button");
     buttonleft.innerText = "←";
-    buttonleft.id = "ButtonLeft";
     buttonleft.addEventListener("click", li);
     document.body.appendChild(buttonleft);
 
     let buttonright: HTMLButtonElement = document.createElement("button");
     buttonright.innerText = "→";
-    buttonright.id = "ButtonRight";
     buttonright.addEventListener("click", re);
     document.body.appendChild(buttonright);
 
     let buttondown: HTMLButtonElement = document.createElement("button");
     buttondown.innerText = "↓";
-    buttondown.id = "ButtonDown";
     buttondown.addEventListener("click", runter);
     document.body.appendChild(buttondown);
 }
 
 
 function hoch(): void {
-    movingRakete.y -= 10;
+    movingRakete.y -= 15;
 }
 function runter(): void {
-    movingRakete.y += 10;
+    movingRakete.y += 15;
 }
 function li(): void {
-    movingRakete.x -= 10;
+    movingRakete.x -= 15;
 }
 function re(): void {
-    movingRakete.x += 10;
+    movingRakete.x += 15;
 }
 
 function highscore(): void {
@@ -125,7 +123,7 @@ function unfall(): void {
         }
 
         function verloren(): void {
-            alert("Looser. Du hast" + score + "Punkte erreicht.");
+            alert("Looser.\n\n Du hast " + score + " Punkte erreicht.");
             location.reload();
         }
 
