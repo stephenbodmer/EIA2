@@ -6,9 +6,6 @@ var abschluss;
             this.y = y;
         }
         Rakete.prototype.moveRakete = function () {
-            if (this.y > 610) {
-                this.y = 0;
-            }
             this.drawRakete();
         };
         Rakete.prototype.drawRakete = function () {

@@ -10,9 +10,6 @@ export class Rakete {
 }
 
 moveRakete(): void{
-  if (this.y > 610) {
-      this.y = 0;
-  }
 
   this.drawRakete();
 }
