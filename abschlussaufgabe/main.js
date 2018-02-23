@@ -121,18 +121,24 @@ var abschluss;
 //
 //     animate();
 // }
-// Animate
-function animate() {
-    r.putImageData(imgData, 0, 0); //Hintergrundbild einsetzen
-    //Schnee
-    for (var i = 0; i < fallingMeteor.length; i++) {
-        var meteor = fallingMeteor[i];
-        meteor.moveMeteor();
-    }
-    for (var i = 0; i < movingRakete.length; i++) {
-        var ra = movingRakete[i];
-        ra.moveRakete();
-    }
-    window.setTimeout(animate, 10);
-}
+// // Animate
+// function animate(): void {
+//
+//     r.putImageData(imgData, 0, 0);    //Hintergrundbild einsetzen
+//
+//     //Schnee
+//     for (let i: number = 0; i < fallingMeteor.length; i++) {
+//         let meteor: Meteorschauer = fallingMeteor[i];
+//         meteor.moveMeteor();
+//     }
+//
+//     for (let i: number = 0; i < movingRakete.length; i++) {
+//         let ra: Rakete = movingRakete[i];
+//         ra.moveRakete();
+//     }
+//
+//
+//
+//     window.setTimeout(animate, 10);
+// }
 //# sourceMappingURL=main.js.map

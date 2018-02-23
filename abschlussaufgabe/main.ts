@@ -155,25 +155,23 @@ function moveRight(): void {
 
 
 
-// Animate
-function animate(): void {
-
-    r.putImageData(imgData, 0, 0);    //Hintergrundbild einsetzen
-
-    //Schnee
-    for (let i: number = 0; i < fallingMeteor.length; i++) {
-        let meteor: Meteorschauer = fallingMeteor[i];
-        meteor.moveMeteor();
-    }
-
-    for (let i: number = 0; i < movingRakete.length; i++) {
-        let ra: Rakete = movingRakete[i];
-        ra.moveRakete();
-    }
-
-
-
-    window.setTimeout(animate, 10);
-}
-
-}
+// // Animate
+// function animate(): void {
+//
+//     r.putImageData(imgData, 0, 0);    //Hintergrundbild einsetzen
+//
+//     //Schnee
+//     for (let i: number = 0; i < fallingMeteor.length; i++) {
+//         let meteor: Meteorschauer = fallingMeteor[i];
+//         meteor.moveMeteor();
+//     }
+//
+//     for (let i: number = 0; i < movingRakete.length; i++) {
+//         let ra: Rakete = movingRakete[i];
+//         ra.moveRakete();
+//     }
+//
+//
+//
+//     window.setTimeout(animate, 10);
+// }
