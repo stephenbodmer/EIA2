@@ -12,7 +12,8 @@ namespace abschluss {
         moveMeteor(): void {
 
             if (this.y > 610) {
-                this.y = 0;
+                this.y = Math.random()*(-100);
+                this.x = Math.random()*800;
             }
 
             this.y += Math.round(Math.random() * 5);

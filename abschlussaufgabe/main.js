@@ -2,9 +2,8 @@ var abschluss;
 (function (abschluss) {
     window.addEventListener("load", spielwiese);
     var imgData;
-    var score = 0;
-    var end = false;
     var hitbox = 15;
+    var score = 0;
     var fallingMeteor = [];
     var movingRakete;
     // let movingRakete: Rakete = new Rakete(2,3);
@@ -40,7 +39,8 @@ var abschluss;
         }
         //Rakete
         movingRakete.moveRakete();
-        collision();
+        unfall();
+        highscore();
         window.setTimeout(animate, 10);
     }
     function buttondraw() {
@@ -77,7 +77,15 @@ var abschluss;
     function re() {
         movingRakete.x += 10;
     }
-    function collision() {
+    function highscore() {
+        for (var i = 1; i < fallingMeteor.length; i++) {
+            var y = fallingMeteor[i].y;
+            if (y > 600) {
+                score += 1;
+            }
+        }
+    }
+    function unfall() {
         for (var i = 1; i < fallingMeteor.length; i++) {
             var x = void 0;
             var y = void 0;
@@ -88,7 +96,7 @@ var abschluss;
                 verloren();
             }
             function verloren() {
-                alert("Looser.");
+                alert("Looser. Du hast" + score + "Punkte erreicht.");
                 location.reload();
             }
         }

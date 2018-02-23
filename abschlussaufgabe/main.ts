@@ -5,9 +5,8 @@ export let r: CanvasRenderingContext2D;
 window.addEventListener("load", spielwiese);
 
 let imgData: ImageData;
-let score: number = 0;
-let end: boolean = false;
 let hitbox: number = 15;
+let score: number = 0;
 var fallingMeteor: Meteorschauer[] = [];
 var movingRakete: Rakete;
 // let movingRakete: Rakete = new Rakete(2,3);
@@ -57,7 +56,8 @@ function animate(): void {
 
     //Rakete
     movingRakete.moveRakete();
-    collision();
+    unfall();
+    highscore();
     window.setTimeout(animate, 10);
 }
 
@@ -102,7 +102,16 @@ function re(): void {
     movingRakete.x += 10;
 }
 
-function collision(): void {
+function highscore(): void {
+  for (let i: number = 1; i < fallingMeteor.length; i++) {
+      let y: number = fallingMeteor[i].y;
+      if(y>600){
+        score+=1;
+      }
+  }
+}
+
+function unfall(): void {
 
     for (let i: number = 1; i < fallingMeteor.length; i++) {
         let x: number;
@@ -116,7 +125,7 @@ function collision(): void {
         }
 
         function verloren(): void {
-            alert("Looser.");
+            alert("Looser. Du hast" + score + "Punkte erreicht.");
             location.reload();
         }
 
