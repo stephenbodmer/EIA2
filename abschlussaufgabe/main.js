@@ -23,7 +23,7 @@ var abschluss;
         abschluss.r.fill();
         //Meteorschauer
         for (var i = 0; i < 10; i++) {
-            fallingMeteor[i] = new abschluss.Meteorschauer(Math.random() * 800, Math.random() * 600);
+            fallingMeteor[i] = new abschluss.Meteorschauer(Math.random() * 800, Math.random() * (-600));
         }
         movingRakete = new abschluss.Rakete(300, 300);
         imgData = abschluss.r.getImageData(0, 0, canvas.width, canvas.height);
@@ -40,6 +40,7 @@ var abschluss;
         }
         //Rakete
         movingRakete.moveRakete();
+        collision();
         window.setTimeout(animate, 10);
     }
     function buttondraw() {
@@ -77,16 +78,18 @@ var abschluss;
         movingRakete.x += 10;
     }
     function collision() {
-        for (var i = 0; i < fallingMeteor.length; i++) {
+        for (var i = 1; i < fallingMeteor.length; i++) {
             var x = void 0;
             var y = void 0;
             x = Math.abs(fallingMeteor[i].x - movingRakete.x);
             y = Math.abs(fallingMeteor[i].y - movingRakete.y);
             if (x < hitbox && y < hitbox) {
-                function loose() {
-                    alert("Game Over");
-                    location.reload();
-                }
+                console.log(x, y);
+                verloren();
+            }
+            function verloren() {
+                alert("Looser.");
+                location.reload();
             }
         }
     }

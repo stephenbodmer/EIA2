@@ -33,7 +33,7 @@ function spielwiese(): void {
 
     //Meteorschauer
     for (let i: number = 0; i < 10; i++) {
-        fallingMeteor[i] = new Meteorschauer(Math.random() * 800, Math.random() * 600);
+        fallingMeteor[i] = new Meteorschauer(Math.random() * 800, Math.random() * (-600));
     }
 
     movingRakete = new Rakete(300,300);
@@ -57,7 +57,7 @@ function animate(): void {
 
     //Rakete
     movingRakete.moveRakete();
-
+    collision();
     window.setTimeout(animate, 10);
 }
 
@@ -104,18 +104,22 @@ function re(): void {
 
 function collision(): void {
 
-    for (let i: number = 0; i < fallingMeteor.length; i++) {
+    for (let i: number = 1; i < fallingMeteor.length; i++) {
         let x: number;
         let y: number;
         x = Math.abs(fallingMeteor[i].x - movingRakete.x);
         y = Math.abs(fallingMeteor[i].y - movingRakete.y);
 
         if (x < hitbox && y < hitbox) {
-          function loose(): void {
-              alert("Game Over");
-              location.reload();
-          }
+          console.log(x, y);
+          verloren();
         }
+
+        function verloren(): void {
+            alert("Looser.");
+            location.reload();
+        }
+
     }
 }
 
