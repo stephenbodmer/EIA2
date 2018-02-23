@@ -10,8 +10,8 @@ html{
 }
 
 button{
-  width: 10em;
-  height: 3em;
+  width: 20em;
+  height: 10em;
 }
 
 @media screen and (min-width: 36.25em){
