@@ -1,67 +1,44 @@
-namespace abschluss{
+namespace abschluss {
 
-export let r: CanvasRenderingContext2D;
+    window.addEventListener("load", spielwiese);
+    export let r: CanvasRenderingContext2D;
 
-window.addEventListener("load", spielwiese);
+    var fallingMeteor: Meteorschauer[] = [];
 
-let imgData: ImageData;
-let fallingMeteor: Meteorschauer[] = [];
-let movingRakete: Rakete[]=[];
-//let movingWolken: Wolken[]=[];
+    let imgData: ImageData;
+    let score: number = 0;
+    let end: boolean = false;
+    let img: ImageData;
+    let hitbox: number = 10;
 
-function spielwiese(): void {
+    let guy: Rakete = new Rakete(400, 500);
 
-  let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
-  r = canvas.getContext("2d");
+    function spielwiese(): void {
+        let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
+        r = canvas.getContext("2d");
 
-    //Background
-    r.fillStyle = "#071019";
-    r.fillRect(0, 0, 800, 600);
+              //Background
+              r.fillStyle = "#071019";
+              r.fillRect(0, 0, 800, 600);
 
-    //Sun
-    r.beginPath();
-    r.strokeStyle = "#B43104";
-    r.arc(700, 100, 50, 0, 2 * Math.PI);
-    r.stroke();
-    r.fillStyle = "#B43104";
-    r.fill();
+              //Sun
+              r.beginPath();
+              r.strokeStyle = "#B43104";
+              r.arc(700, 100, 50, 0, 2 * Math.PI);
+              r.stroke();
+              r.fillStyle = "#B43104";
+              r.fill();
 
 
-    // Meteorschauer
-    for (let i: number = 0; i < 10; i++) {
-        fallingMeteor[i] = new Meteorschauer(Math.random() * 800, Math.random() * 600);
+
+        //Img wird erstellt damit animate funktioniert und animate/button Funktionen werden ausgef�hrt
+        imgData = r.getImageData(0, 0, canvas.width, canvas.height);
+        animate();
     }
-    for (let i: number = 0; i < 10; i++) {
-        movingRakete[i] = new Rakete(Math.random() * 800, Math.random() * 600);
+//Zeichnen und Animation der Autos + Zeichnen der Coins
+    function animate(): void {
+
+        window.setTimeout(animate, 20);
     }
-
-
-    imgData = r.getImageData(0, 0, canvas.width, canvas.height);
-
-    animate();
-}
-
-
-
-// Animate
-function animate(): void {
-
-    r.putImageData(imgData, 0, 0);    //Hintergrundbild einsetzen
-
-    //Schnee
-    for (let i: number = 0; i < fallingMeteor.length; i++) {
-        let meteor: Meteorschauer = fallingMeteor[i];
-        meteor.moveMeteor();
-    }
-
-    for (let i: number = 0; i < movingRakete.length; i++) {
-        let ra: Rakete = movingRakete[i];
-        ra.moveRakete();
-    }
-
-
-
-    window.setTimeout(animate, 10);
-}
 
 }

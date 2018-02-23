@@ -1,18 +1,23 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var abschluss;
 (function (abschluss) {
-    var Meteorschauer = /** @class */ (function () {
-        function Meteorschauer(x, y) {
-            this.x = x;
-            this.y = y;
+    var Meteorschauer = /** @class */ (function (_super) {
+        __extends(Meteorschauer, _super);
+        function Meteorschauer(_x, _y, _dx) {
+            var _this = _super.call(this, _x, _y) || this;
+            _this.dx = _dx;
+            return _this;
         }
-        Meteorschauer.prototype.moveMeteor = function () {
-            if (this.y > 610) {
-                this.y = 0;
-            }
-            this.y += Math.round(Math.random() * 5);
-            this.createMeteor();
-        };
-        Meteorschauer.prototype.createMeteor = function () {
+        Meteorschauer.prototype.draw = function () {
             abschluss.r.beginPath();
             abschluss.r.arc(this.x, this.y, 5, 0 * Math.PI, 2.0 * Math.PI);
             abschluss.r.strokeStyle = "lightgrey";
@@ -21,44 +26,50 @@ var abschluss;
             abschluss.r.fill();
             abschluss.r.closePath();
         };
+        Meteorschauer.prototype.move = function () {
+            if (this.x > 800) {
+                this.x = 0;
+            }
+            this.x += this.dx;
+        };
         return Meteorschauer;
-    }());
+    }(abschluss.Superklasse));
     abschluss.Meteorschauer = Meteorschauer;
-    //     export class Rakete {
-    //       x: number;
-    //       y: number;
-    //
-    //       constructor(x: number, y: number) {
-    //           this.x = x;
-    //           this.y = y;
-    //     }
-    //
-    //     moveRakete(): void{
-    //       if (this.y > 610) {
-    //           this.y = 0;
-    //       }
-    //
-    //       this.drawRakete();
-    //     }
-    //
-    //     drawRakete(): void {
-    //       r.beginPath();
-    //       r.strokeStyle = "white";
-    //       r.moveTo(100, 200);
-    //       r.lineTo(105, 210);
-    //       r.lineTo(103, 240);
-    //       r.lineTo(110, 245);
-    //       r.lineTo(110, 250);
-    //       r.lineTo(100, 245);
-    //       r.lineTo(90, 250);
-    //       r.lineTo(90, 245);
-    //       r.lineTo(97, 240);
-    //       r.lineTo(95, 210);
-    //       r.stroke();
-    //       r.fillStyle = "white";
-    //       r.fill();
-    //
-    //     }
-    //    }
 })(abschluss || (abschluss = {}));
+//     export class Meteorschauer {
+//         x: number;
+//         y: number;
+//
+//         constructor(x: number, y: number) {
+//             this.x = x;
+//             this.y = y;
+//         }
+//
+//         moveMeteor(): void {
+//
+//             if (this.y > 610) {
+//                 this.y = 0;
+//             }
+//
+//             this.y += Math.round(Math.random() * 5);
+//
+//             this.score();
+//
+//             this.createMeteor();
+//         }
+//
+//         createMeteor(): void {
+//
+//         }
+//
+//         score(): void{
+//           let score:number=0;
+//
+//           if(this.y>600){
+//             score+=1;
+//           }
+//
+//         }
+//     }
+// }
 //# sourceMappingURL=meteor.js.map

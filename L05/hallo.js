@@ -98,11 +98,11 @@ var aufgabe5;
         for (var i_1 = 0; i_1 < 1000; i_1++) {
             fallingSchnee[i_1] = new aufgabe5.Schnee(Math.random() * 800, Math.random() * 600);
         }
-        //Wolke 
+        //Wolke
         for (var i_2 = 0; i_2 < 3; i_2++) {
             movingWolken[i_2] = new aufgabe5.Wolken(Math.random() * (-400) + 200, Math.random() * (100 - 30 + 1) + 30);
         }
-        // Skifahrer 
+        // Skifahrer
         for (var i_3 = 0; i_3 < 3; i_3++) {
             movingSkier[i_3] = new aufgabe5.Skiers(350, 430, Math.random() * 8 + 5, Math.random() * 8 + 10, "hsl(" + Math.random() * 360 + ", 80%, 70%)");
         }
@@ -113,7 +113,7 @@ var aufgabe5;
         imgData = aufgabe5.ski.getImageData(0, 0, canvas.width, canvas.height);
         animate();
     } /*funktion Ski*/
-    // ------------ANIMATE-----------------------------------------     
+    // ------------ANIMATE-----------------------------------------
     function animate() {
         aufgabe5.ski.putImageData(imgData, 0, 0); //Hintergrundbild einsetzen
         //Wolke

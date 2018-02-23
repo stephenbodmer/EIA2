@@ -1,10 +1,13 @@
 var abschluss;
 (function (abschluss) {
     window.addEventListener("load", spielwiese);
-    var imgData;
     var fallingMeteor = [];
-    var movingRakete = [];
-    //let movingWolken: Wolken[]=[];
+    var imgData;
+    var score = 0;
+    var end = false;
+    var img;
+    var hitbox = 10;
+    var guy = new abschluss.Rakete(400, 500);
     function spielwiese() {
         var canvas = document.getElementsByTagName("canvas")[0];
         abschluss.r = canvas.getContext("2d");
@@ -18,29 +21,13 @@ var abschluss;
         abschluss.r.stroke();
         abschluss.r.fillStyle = "#B43104";
         abschluss.r.fill();
-        // Meteorschauer
-        for (var i = 0; i < 10; i++) {
-            fallingMeteor[i] = new abschluss.Meteorschauer(Math.random() * 800, Math.random() * 600);
-        }
-        for (var i = 0; i < 10; i++) {
-            movingRakete[i] = new abschluss.Rakete(Math.random() * 800, Math.random() * 600);
-        }
+        //Img wird erstellt damit animate funktioniert und animate/button Funktionen werden ausgef�hrt
         imgData = abschluss.r.getImageData(0, 0, canvas.width, canvas.height);
         animate();
     }
-    // Animate
+    //Zeichnen und Animation der Autos + Zeichnen der Coins
     function animate() {
-        abschluss.r.putImageData(imgData, 0, 0); //Hintergrundbild einsetzen
-        //Schnee
-        for (var i = 0; i < fallingMeteor.length; i++) {
-            var meteor = fallingMeteor[i];
-            meteor.moveMeteor();
-        }
-        for (var i = 0; i < movingRakete.length; i++) {
-            var ra = movingRakete[i];
-            ra.moveRakete();
-        }
-        window.setTimeout(animate, 10);
+        window.setTimeout(animate, 20);
     }
 })(abschluss || (abschluss = {}));
 //# sourceMappingURL=main.js.map

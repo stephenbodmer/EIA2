@@ -99,8 +99,8 @@ namespace aufgabe5 {
         ski.closePath();
         ski.strokeStyle = "black";
         ski.stroke();
-        
-        
+
+
         //Bäume
         function drawTree(x: number, y: number, ski: any): void {
             ski.fillStyle = "brown";
@@ -121,12 +121,12 @@ namespace aufgabe5 {
             fallingSchnee[i] = new Schnee(Math.random() * 800, Math.random() * 600);
         }
 
-        //Wolke 
+        //Wolke
         for (let i: number = 0; i < 3; i++) {
             movingWolken[i] = new Wolken(Math.random() * (-400) + 200, Math.random() * (100 - 30 + 1) + 30);
         }
 
-        // Skifahrer 
+        // Skifahrer
         for (let i: number = 0; i < 3; i++) {
             movingSkier[i] = new Skiers(
                 350,
@@ -140,14 +140,14 @@ namespace aufgabe5 {
         for (var i: number = 0; i < 40; i++) {
             drawTree(Math.floor(Math.random() * 550 + 50), Math.floor(Math.random() * 100 + 480), ski);
         }
-        
-        
+
+
         imgData = ski.getImageData(0, 0, canvas.width, canvas.height);
         animate();
     } /*funktion Ski*/
 
 
-    // ------------ANIMATE-----------------------------------------     
+    // ------------ANIMATE-----------------------------------------
 
     function animate(): void {
 
