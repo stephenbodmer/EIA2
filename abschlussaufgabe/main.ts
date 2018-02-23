@@ -1,4 +1,4 @@
-namespace l{
+namespace abschluss{
 
 export let r: CanvasRenderingContext2D;
 
@@ -53,7 +53,7 @@ function animate(): void {
 
     r.putImageData(imgData, 0, 0);    //Hintergrundbild einsetzen
 
-    //Schnee
+    //Meteorschauer
     for (let i: number = 0; i < fallingMeteor.length; i++) {
         let meteor: Meteorschauer = fallingMeteor[i];
         meteor.moveMeteor();
